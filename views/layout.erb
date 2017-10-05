@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+</head>
+<body>
+
+  <a href="/">home</a>
+  <% if logged_in? %>
+    <a href="/profile">profile</a>
+  <% end%>
+  <a href="/all_meals">ALL MEALS</a>
+
+  <div>
+    <span>Login </span>
+    <button> <a href="/login">Here</a> </button>
+    <span>Sign up </span>
+    <button> <a href="/new_user">Here</a> </button>
+  </div>
+
+  <% if logged_in? %>
+  <p>
+    logged in as <%= current_user.user_name %>
+  </p>
+    <form action="/session" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>logout</button>
+    </form>
+  <% end %>
+
+  <%= yield %>
+
+</body>
+</html>

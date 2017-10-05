@@ -1,0 +1,11 @@
+<div class="all_meals">
+  <% if @all_meals %>
+  <h1>all meal posts</h1>
+    <% @all_meals.each do |meal| %>
+      <div class="each_meal">
+        <img src="<%= meal.image_url %>" alt="">
+        <p> <%= meal.meal_name %> </p>
+      </div>
+    <% end%>
+  <% end %>
+</div>

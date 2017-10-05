@@ -1,0 +1,25 @@
+<h1>this is the home page</h1>
+
+<div class="most_liked">
+  <% if @rec_meals %>
+  <h1>most liked meals</h1>
+    <% @rec_meals.each do |meal| %>
+      <div class="each_meal">
+        <img src="<%= meal.image_url %>" alt="">
+        <p> <%= meal.meal_name %> </p>
+      </div>
+    <% end%>
+  <% end %>
+</div>
+
+<div class="most_recent">
+  <% if @rec_meals %>
+  <h1>most recent meal posts</h1>
+    <% @rec_meals.each do |meal| %>
+      <div class="each_meal">
+        <img src="<%= meal.image_url %>" alt="">
+        <p> <%= meal.meal_name %> </p>
+      </div>
+    <% end%>
+  <% end %>
+</div>

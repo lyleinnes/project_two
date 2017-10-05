@@ -1,0 +1,36 @@
+<h3>add a meal here</h3>
+<form action="/new_meal" method="post">
+  <label for="">meal name</label>
+  <input name="meal_name" type="text">
+  <label for="">ingredients</label>
+  <input name="ingredients" type="text">
+  <label for="">instructions</label>
+  <input name="instructions" type="text">
+  <label for="">image url</label>
+  <input name="image_url" type="text">
+  <button type="submit">add</button>
+</form>
+
+<div class="your_recommend">
+  <% if @rec_meals %>
+  <h1>your recommendations</h1>
+    <% @rec_meals.each do |meal| %>
+      <div class="each_meal">
+        <img src="<%= meal.image_url %>" alt="">
+        <p> <%= meal.meal_name %> </p>
+      </div>
+    <% end%>
+  <% end %>
+</div>
+
+<div class="your_meals">
+  <% if @meals %>
+  <h1>your meals</h1>
+    <% @meals.each do |meal| %>
+      <div class="each_meal">
+        <img src="<%= meal.image_url %>" alt="">
+        <p> <%= meal.meal_name %> </p>
+      </div>
+    <% end%>
+  <% end %>
+</div>

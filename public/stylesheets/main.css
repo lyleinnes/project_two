@@ -1,0 +1,85 @@
+body {
+  background-color: mistyrose;
+  width: 95%;
+  height: 100%;
+}
+
+.your_meals {
+  background-color: lightgrey;
+  width: 100%;
+}
+.your_meals .each_meal {
+  width: 30%;
+  max-height: 100%;
+  display: inline-block;
+  border: 2px solid white;
+  margin-left: 1.9%;
+}
+
+.your_meals .each_meal img {
+  width: 100%;  
+}
+
+.your_recommend {
+  background-color: lightgrey;
+  width: 100%;
+}
+.your_recommend .each_meal {
+  width: 30%;
+  max-height: 100%;
+  display: inline-block;
+  border: 2px solid white;
+  margin-left: 1.9%;
+}
+
+.your_recommend .each_meal img {
+  width: 100%;  
+}
+
+.most_liked {
+  background-color: lightgrey;
+  width: 100%;
+}
+.most_liked .each_meal {
+  width: 30%;
+  max-height: 100%;
+  display: inline-block;
+  border: 2px solid white;
+  margin-left: 1.9%;
+}
+
+.most_liked .each_meal img {
+  width: 100%;  
+}
+
+.most_recent {
+  background-color: lightgrey;
+  width: 100%;
+}
+.most_recent .each_meal {
+  width: 30%;
+  max-height: 100%;
+  display: inline-block;
+  border: 2px solid white;
+  margin-left: 1.9%;
+}
+
+.most_recent .each_meal img {
+  width: 100%;  
+}
+
+.all_meals {
+  background-color: lightgrey;
+  width: 100%;
+}
+.all_meals .each_meal {
+  width: 30%;
+  max-height: 100%;
+  display: inline-block;
+  border: 2px solid white;
+  margin-left: 1.9%;
+}
+
+.all_meals .each_meal img {
+  width: 100%;  
+}
