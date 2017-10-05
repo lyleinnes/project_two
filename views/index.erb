@@ -16,9 +16,12 @@
           </form>
         <% end %>
         <% if session[:user_id] == meal.user_id %>
+          <form action="/details/<%= meal.id %>/edit" method="get">
+            <button>Edit</button>
+          </form>
           <form action="meal/<%= meal.id %>" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <button type="submit">Delete</button>
+            <input type="hidden" name="_method" value="delete">
+            <button type="submit">Delete</button>
           </form>
         <% end %>
       </div>
@@ -33,13 +36,22 @@
       <div class="each_meal">
         <a href="/details/<%= meal.id %>"><img src="<%= meal.image_url %>" alt=""></a>
         <p> <%= meal.meal_name %> </p>
-        <p>likes: <%= meal.likes_count %></p>
+        <p>likes: <%= meal.likes.count %></p>
         <% if logged_in? %>
         <form action="/new_like" method="post">
           <input type="hidden" name="meal_id" value="<%= meal.id %>" >
           <input type="hidden" name="user_id" value="<%= current_user.id %>">
           <button>like</button>
         </form>
+          <% if session[:user_id] == meal.user_id %>
+            <form action="/details/<%= meal.id %>/edit" method="get">
+              <button>Edit</button>
+            </form>
+            <form action="meal/<%= meal.id %>" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <button type="submit">Delete</button>
+            </form>
+          <% end %>
         <% end %>
       </div>
     <% end%>

@@ -65,10 +65,11 @@ h1 {
   display: inline-block;
   border: 2px solid white;
   margin-left: 1.9%;
+  vertical-align: top;
 }
 img {
-  max-height: 90%;
-  max-width: 90%;
+  width: 100%;
+  height:300px;
 }
 .left_details {
   width: 60%;
@@ -93,98 +94,3 @@ img {
 .new_and_edit {
   text-align: center
 }
-
-
-
-/* below this is old styling 
-.your_meals {
-  background-color: lightgrey;
-  width: 100%;
-  max-height: 30%;
-}
-.your_meals .each_meal {
-  width: 30%;
-  max-height: 100%;
-  display: inline-block;
-  border: 2px solid white;
-  margin-left: 1.9%;
-}
-
-.your_meals .each_meal img {
-  width: 100%;
-  max-height: 70%;
-}
-
-.your_recommend {
-  background-color: lightgrey;
-  width: 100%;
-  max-height: 30%;
-}
-.your_recommend .each_meal {
-  width: 30%;
-  max-height: 100%;
-  display: inline-block;
-  border: 2px solid white;
-  margin-left: 1.9%;
-}
-
-.your_recommend .each_meal img {
-  width: 100%;
-  max-height: 100%;  
-  max-height: 70%;
-}
-
-.most_liked {
-  background-color: lightgrey;
-  width: 100%;
-  height: 30%;
-}
-.most_liked .each_meal {
-  width: 30%;
-  max-height: 100%;
-  display: inline-block;
-  border: 2px solid white;
-  margin-left: 1.9%;
-}
-
-.most_liked .each_meal img {
-  width: 100%;
-  max-height: 70%;  
-}
-
-.most_recent {
-  background-color: lightgrey;
-  width: 100%;
-  height: 30%;
-}
-.most_recent .each_meal {
-  width: 30%;
-  max-height: 100%;
-  display: inline-block;
-  border: 2px solid white;
-  margin-left: 1.9%;
-}
-
-.most_recent .each_meal img {
-  width: 100%;  
-  max-height: 70%;
-}
-
-.all_meals {
-  background-color: lightgrey;
-  width: 100%;
-  height: 30%;
-}
-.all_meals .each_meal {
-  width: 30%;
-  max-height: 100%;
-  display: inline-block;
-  border: 2px solid white;
-  margin-left: 1.9%;
-}
-
-.all_meals .each_meal img {
-  width: 100%;  
-  max-height: 70%;
-}
-*/

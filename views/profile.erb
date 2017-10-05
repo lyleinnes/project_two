@@ -12,7 +12,7 @@
 
 <div class="meal_disp">
   <% if @meals %>
-  <h1>YOUR LAST 3 MEALS</h1>
+  <h1>YOUR LAST 3 POSTS</h1>
     <% @meals.each do |meal| %>
       <div class="each_meal">
         <a href="/details/<%= meal.id %>"><img src="<%= meal.image_url %>" alt=""></a>

@@ -13,14 +13,14 @@
         </form>
       <% end %>
       <% if session[:user_id] == meal.user_id %>
-       <form action="/details/<%= meal.id %>/edit" method="get">
+        <form action="/details/<%= meal.id %>/edit" method="get">
           <button>Edit</button>
-          </form>
-          <form action="meal/<%= meal.id %>" method="post">
+        </form>
+        <form action="meal/<%= meal.id %>" method="post">
           <input type="hidden" name="_method" value="delete">
           <button type="submit">Delete</button>
-          </form>
-        <% end %>
+        </form>
+      <% end %>
       </div>
     <% end%>
   <% end %>

@@ -24,7 +24,7 @@ end
 #== HOME PAGE HERE ==#
 get '/' do
   @most_liked = Meal.joins(:likes).group('likes.meal_id', 'meals.id').select('meals.*, count(meal_id) as likes_count').order('likes_count desc').limit(3)
-  @most_recent = Meal.joins(:likes).group('meals.id').select('meals.*, count(meal_id) as likes_count').order('created_at desc').limit(3)
+  @most_recent = Meal.includes(:likes).order(created_at: :desc).limit(3)
   # @most_recent2 = Meal.all.order(created_at: :desc).limit(3)
   erb :index
 end
