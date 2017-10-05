@@ -1,6 +1,6 @@
 require 'pry'
 require 'sinatra'
-require 'sinatra/reloader'
+# require 'sinatra/reloader'
 require 'pg'
 require_relative 'db_config'
 require_relative 'models/like'
@@ -41,6 +41,7 @@ end
 get '/login' do
   erb :login
 end
+
 get '/new_user' do
   erb :new_user
 end
@@ -48,6 +49,16 @@ end
 get '/all_meals' do
   @all_meals = Meal.all.order(created_at: :desc)
   erb :all_meals
+end
+
+post '/new_like' do
+  if current_user.likes
+    like = Like.new
+    like.meal_id = params[:meal_id]
+    like.user_id = params[:user_id]
+    like.save
+  end
+  redirect '/'
 end
 
 post '/new_meal' do

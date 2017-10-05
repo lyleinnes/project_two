@@ -19,6 +19,13 @@
       <div class="each_meal">
         <img src="<%= meal.image_url %>" alt="">
         <p> <%= meal.meal_name %> </p>
+        <% if logged_in? %>
+        <form action="/new_like" method="post">
+          <input type="hidden" name="meal_id" value="<%= meal.id %>" >
+          <input type="hidden" name="user_id" value="<%= current_user.id %>">
+          <button>like</button>
+        </form>
+        <% end %>
       </div>
     <% end%>
   <% end %>
