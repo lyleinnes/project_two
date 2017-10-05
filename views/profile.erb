@@ -1,6 +1,6 @@
 <div class="meal_disp">
   <% if @rec_meals %>
-  <h1>TOP 3 SUGGESTIONS</h1>
+  <h1>THREE SUGGESTIONS FOR YOU</h1>
     <% @rec_meals.each do |meal| %>
       <div class="each_meal">
         <a href="/details/<%= meal.id %>"><img src="<%= meal.image_url %>" alt=""></a>
