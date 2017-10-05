@@ -52,7 +52,7 @@ get '/all_meals' do
 end
 
 post '/new_like' do
-  if current_user.likes
+  if Like.where()
     like = Like.new
     like.meal_id = params[:meal_id]
     like.user_id = params[:user_id]
