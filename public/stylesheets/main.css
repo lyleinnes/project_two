@@ -5,14 +5,15 @@ body {
   height: 90%;
   margin-bottom: 5%;
   font-family: helvetica;
+  text-align: center;
 }
 nav {
   width: 100%;
   height: 30px;
   margin-left: auto;
   margin-right: auto;
-  background-color: lightgrey;
-  text-transform: uppercase;
+/*  background-color: lightgrey;
+*/  text-transform: uppercase;
 }
 nav ul {
   list-style-type: none;
@@ -57,17 +58,19 @@ h1 {
   text-align: center;
 }
 .meal_disp {
-  background-color: lightgrey;
-  width: 100%;
+/*  background-color: lightgrey;
+*/  width: 100%;
   height: 10%;
 }
 .each_meal {
   width: 30%;
   max-height: 100%;
   display: inline-block;
-  border: 2px solid white;
+  border: 3px solid black;
+  border-radius: 5px;
   margin-left: 1.9%;
   vertical-align: top;
+  margin-bottom: 5px;
 }
 img {
   width: 100%;
@@ -77,13 +80,13 @@ img {
   width: 60%;
   height: 100vh;
   display: inline-block;
-  background: lightgrey;
-}
+/*  background: lightgrey;
+*/}
 #meal_image {
   display: inline-block;
   width: 38%;
   height: 100vh;
-  background: lightgrey;
+  /*background: lightgrey;*/
   vertical-align: top;
 }
 #meal_image img {

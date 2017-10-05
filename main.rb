@@ -30,7 +30,7 @@ get '/' do
 end
 #== ALL MEALS PAGE HERE ==#
 get '/all_meals' do
-  @all_meals = Meal.all.order(created_at: :desc)
+  @all_meals = Meal.includes(:likes).order(created_at: :desc)
   erb :all_meals
 end
 #== MEAL DETAILS PAGE ==#
@@ -45,8 +45,8 @@ get '/details/:id/edit' do
 end
 #== USER PROFILE PAGE ==#
 get '/profile' do
-  @rec_meals = Meal.all.sample(3)
-  @meals = current_user.meals.order(created_at: :desc).limit(3)
+  @rec_meals = Meal.includes(:likes).all.sample(3)
+  @meals = current_user.meals.includes(:likes).order(created_at: :desc).limit(3)
   erb :profile
 end
 #== LOGIN PAGE ==#
