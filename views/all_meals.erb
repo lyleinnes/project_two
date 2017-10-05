@@ -1,10 +1,26 @@
-<div class="all_meals">
+<div class="meal_disp">
   <% if @all_meals %>
-  <h1>all meal posts</h1>
+  <h1>ALL MEAL POSTS</h1>
     <% @all_meals.each do |meal| %>
       <div class="each_meal">
-        <img src="<%= meal.image_url %>" alt="">
+        <a href="/details/<%= meal.id %>"><img src="<%= meal.image_url %>" alt=""></a>
         <p> <%= meal.meal_name %> </p>
+        <% if logged_in? %>
+        <form action="/new_like" method="post">
+          <input type="hidden" name="meal_id" value="<%= meal.id %>" >
+          <input type="hidden" name="user_id" value="<%= current_user.id %>">
+          <button>like</button>
+        </form>
+      <% end %>
+      <% if session[:user_id] == meal.user_id %>
+       <form action="/details/<%= meal.id %>/edit" method="get">
+          <button>Edit</button>
+          </form>
+          <form action="meal/<%= meal.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">Delete</button>
+          </form>
+        <% end %>
       </div>
     <% end%>
   <% end %>

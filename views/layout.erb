@@ -7,28 +7,37 @@
 </head>
 <body>
 
-  <a href="/">home</a>
-  <% if logged_in? %>
-    <a href="/profile">profile</a>
-  <% end%>
-  <a href="/all_meals">ALL MEALS</a>
+  <nav>
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/all_meals">all meals</a></li>
+      <% if logged_in? %>
+        <li><a href="/new_meal">new meal</a></li>
+        <li><a href="/profile">profile</a></li>
+      <% end%>
+    </ul>
+  </nav>
 
-  <div>
-    <span>Login </span>
-    <button> <a href="/login">Here</a> </button>
-    <span>Sign up </span>
-    <button> <a href="/new_user">Here</a> </button>
+  <div class="user_actions">
+    <div class="left">
+      <span>Login </span>
+      <button> <a href="/login">Here</a> </button>
+      <span>Sign up </span>
+      <button> <a href="/new_user">Here</a> </button>
+    </div>
+    <% if logged_in? %>
+    <div class="center">
+      <span>logged in as <%= current_user.user_name %></span>
+    </div>
+    <div class="right">
+      <span>Log out</span>
+      <form action="/session" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button>here</button>
+      </form>
+    </div>
+    <% end %>
   </div>
-
-  <% if logged_in? %>
-  <p>
-    logged in as <%= current_user.user_name %>
-  </p>
-    <form action="/session" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <button>logout</button>
-    </form>
-  <% end %>
 
   <%= yield %>
 

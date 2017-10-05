@@ -1,0 +1,23 @@
+
+<div class="new_and_edit">
+  <form action="/meal/<%= @meal.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+      <div class="edit_deets">
+        <p>Meal name</p>
+        <textarea name="name" cols="30" rows="30"><%= @meal.meal_name %></textarea>
+      </div>
+      <div class="edit_deets">
+        <p>Instructions</p>
+        <textarea name="instructions" cols="30" rows="30"><%= @meal.instructions %></textarea>
+      </div>
+      <div class="edit_deets">
+        <p>Ingredients</p>
+        <textarea name="ingredients" cols="30" rows="30"><%= @meal.ingredients %></textarea>
+      </div>
+      <div class="edit_deets">
+        <p>Image URL</p>
+        <textarea name="image_url" cols="30" rows="30"><%= @meal.image_url %></textarea>
+      </div>
+    <button type="submit">Update</button>
+  </form>
+</div>

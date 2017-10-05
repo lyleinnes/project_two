@@ -1,24 +1,39 @@
-<h1>this is the home page</h1>
+<h1>QUIK-MEALS</h1>
 
-<div class="most_liked">
-  <% if @rec_meals %>
-  <h1>most liked meals</h1>
-    <% @rec_meals.each do |meal| %>
+<div class="meal_disp">
+  <% if @most_liked %>
+    <h1>MOST LIKED MEALS</h1>
+    <% @most_liked.each do |meal| %>
       <div class="each_meal">
-        <img src="<%= meal.image_url %>" alt="">
+        <a href="/details/<%= meal.id %>"><img src="<%= meal.image_url %>" alt=""></a>
         <p> <%= meal.meal_name %> </p>
+        <p>likes: <%= meal.likes_count %></p>
+        <% if logged_in? %>
+          <form action="/new_like" method="post">
+            <input type="hidden" name="meal_id" value="<%= meal.id %>" >
+            <input type="hidden" name="user_id" value="<%= current_user.id %>">
+            <button>like</button>
+          </form>
+        <% end %>
+        <% if session[:user_id] == meal.user_id %>
+          <form action="meal/<%= meal.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">Delete</button>
+          </form>
+        <% end %>
       </div>
     <% end%>
   <% end %>
 </div>
 
-<div class="most_recent">
-  <% if @rec_meals %>
-  <h1>most recent meal posts</h1>
-    <% @rec_meals.each do |meal| %>
+<div class="meal_disp">
+  <% if @most_recent %>
+    <h1>LATEST MEAL POSTS</h1>
+    <% @most_recent.each do |meal| %>
       <div class="each_meal">
-        <img src="<%= meal.image_url %>" alt="">
+        <a href="/details/<%= meal.id %>"><img src="<%= meal.image_url %>" alt=""></a>
         <p> <%= meal.meal_name %> </p>
+        <p>likes: <%= meal.likes_count %></p>
         <% if logged_in? %>
         <form action="/new_like" method="post">
           <input type="hidden" name="meal_id" value="<%= meal.id %>" >
@@ -28,5 +43,5 @@
         <% end %>
       </div>
     <% end%>
-  <% end %>
+    <% end %>
 </div>
