@@ -1,5 +1,5 @@
-ALT-H1 I am the readme. By reading me, you have done yourself a great favour.
-
+I am the readme. By reading me, you have done yourself a great favour.
+===============================================================
 ```
 Here is the link to my meal suggestor app:
 https://still-plateau-90455.herokuapp.com/
