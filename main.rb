@@ -1,5 +1,6 @@
 require 'pry'
 require 'pg'
+require 'sinatra'
 require_relative 'db_config'
 require_relative 'models/like'
 require_relative 'models/meal'
