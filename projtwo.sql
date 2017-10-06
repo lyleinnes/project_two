@@ -1,17 +1,17 @@
 CREATE TABLE users (     
   id SERIAL4 PRIMARY KEY,
-  user_name VARCHAR(100),
-  email VARCHAR(200),
-  password VARCHAR(50),
-  password_digest VARCHAR(400)
+  user_name VARCHAR(300),
+  email VARCHAR(500),
+  password_digest VARCHAR(1000)
 );
 
 CREATE TABLE meals (     
   id SERIAL4 PRIMARY KEY,
-  meal_name VARCHAR(300),
-  ingredients VARCHAR(500),
-  instructions VARCHAR(1000),
-  image_url VARCHAR(500),
+  meal_name VARCHAR(500),
+  image_url VARCHAR(1500),
+  ingredients VARCHAR(1500),
+  instructions VARCHAR(4000),
+  created_at TIMESTAMP,
   user_id INTEGER,
   FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE restrict
 );
@@ -35,6 +35,9 @@ INSERT INTO [table name] [column] VALUES [column value];
 
 ALTER TABLE [table name] ADD COLUMN [column name] [column type];
 
+ALTER TABLE meals drop COLUMN ingredients;
+
+ALTER TABLE meals ADD COLUMN ingredients VARCHAR(2000);
   
 ALTER TABLE meals ADD COLUMN user_id VARCHAR(,
 FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE restrict,
