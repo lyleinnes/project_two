@@ -6,8 +6,7 @@
     <% @most_liked.each do |meal| %>
       <div class="each_meal">
         <a href="/details/<%= meal.id %>"><img src="<%= meal.image_url %>" alt=""></a>
-        <p> <%= meal.meal_name %> </p>
-        <p>likes: <%= meal.likes_count %></p>
+        <p><%= meal.meal_name %> likes: <%= meal.likes_count %></p>
         <% if logged_in? %>
           <form action="/new_like" method="post">
             <input type="hidden" name="meal_id" value="<%= meal.id %>" >
@@ -35,8 +34,7 @@
     <% @most_recent.each do |meal| %>
       <div class="each_meal">
         <a href="/details/<%= meal.id %>"><img src="<%= meal.image_url %>" alt=""></a>
-        <p> <%= meal.meal_name %> </p>
-        <p>likes: <%= meal.likes.count %></p>
+        <p><%= meal.meal_name %> likes: <%= meal.likes.count %></p>
         <% if logged_in? %>
         <form action="/new_like" method="post">
           <input type="hidden" name="meal_id" value="<%= meal.id %>" >
